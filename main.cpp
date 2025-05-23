@@ -1,5 +1,8 @@
 #include <iostream>
 #include <windows.h>
+
+#include "saldo.h"
+
 using namespace std;
 
 int menu, loop_menu;
@@ -16,6 +19,10 @@ void displayMenu()
 
 int main()
 {
+  Saldo saldo_sekarang;
+  Saldo tambah_saldo;
+  fiturSaldo saldo_setor, saldo_tarik;
+
   system("cls");
 
   displayMenu();
@@ -30,15 +37,39 @@ int main()
     switch (menu)
     {
     case 1:
-      // cekSaldo();
+      saldo_sekarang.cekSaldo();
+
+      loop_menu = 1;
       break;
 
     case 2:
-      // setorSaldo();
+      saldo_setor.setorSaldo();
+      saldo_sekarang = saldo_sekarang + saldo_setor;
+      saldo_sekarang.cekSaldo();
+
+      loop_menu = 1;
       break;
 
     case 3:
-      // tarikSaldo();
+      if (!saldo_sekarang.isEmpty())
+      {
+        saldo_tarik.tarikSaldo();
+        if (saldo_sekarang.getSaldo() < saldo_tarik.getSaldo())
+        {
+          cout << "Saldo ga cukup kocak" << endl;
+        }
+        else
+        {
+          saldo_sekarang = saldo_sekarang - saldo_tarik;
+          saldo_sekarang.cekSaldo();
+        }
+      }
+      else
+      {
+        cout << "Saldo kosong, setor duls" << endl;
+      }
+
+      loop_menu = 1;
       break;
 
     case 4:
