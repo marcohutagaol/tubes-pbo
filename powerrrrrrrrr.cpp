@@ -102,8 +102,8 @@ public:
     }
     
     void simpandatapengguna(){
-        ofstream berkas;
-        berkas.open("datapengguna.txt");
+        fstream berkas;
+        berkas.open("datapengguna.txt", ios::out);
         if(!berkas.is_open()){
             cout << "tidak bisa buat file datapengguna.txt!" << endl;
             return;
@@ -121,8 +121,8 @@ public:
     }
     
     void bacadatapengguna(){
-        ifstream berkas;
-        berkas.open("datapengguna.txt");
+        fstream berkas;
+        berkas.open("datapengguna.txt", ios::in);
         if(!berkas.is_open()){
             cout << "file akan dibuat." << endl;
             return;
@@ -158,8 +158,8 @@ public:
     }
     
     void simpandatarekening(){
-        ofstream berkas;
-        berkas.open("datarekening.txt");
+        fstream berkas;
+        berkas.open("datarekening.txt", ios::out);
         if(!berkas.is_open()){
             cout << "tidak bisa buat file datarekening.txt!" << endl;
             return;
@@ -175,8 +175,8 @@ public:
     }
     
     void bacadatarekening(){
-        ifstream berkas;
-        berkas.open("datarekening.txt");
+        fstream berkas;
+        berkas.open("datarekening.txt", ios::in);
         if(!berkas.is_open()){
             cout << "datarekening.txt belum ada." << endl;
             return;
@@ -215,7 +215,7 @@ public:
     
     void daftar(){
         if(jumlahpengguna >= MAKSUSER){
-            cout << "Maaf, data pengguna sudah penuh!" << endl;
+            cout << "data pengguna sudah penuh!" << endl;
             cout << "tekan apa saja..";
             cin.ignore();
             cin.get();
