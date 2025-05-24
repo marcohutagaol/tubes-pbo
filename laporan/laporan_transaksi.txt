@@ -1,0 +1,7 @@
+Data Nasabah
+            
+Penyetoran : Rp8000
+Penarikan  : Rp3000
+Sisa Saldo : Rp5000
+Tanggal    : Sat May 24 21:02:53 2025
+

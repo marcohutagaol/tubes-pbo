@@ -1,14 +1,34 @@
 #include <iostream>
 #include <windows.h>
 
-#include "saldo.h"
+#include "fitur/input_data.h"
+#include "fitur/saldo.h"
+#include "fitur/cekdata.h"
+#include "fitur/transaksi.h"
+#include "fitur/keluar.h"
 
 using namespace std;
 
+string nama, NIM, alamat, nomortelepon;
 int menu, loop_menu;
+
+void inputdata()
+{
+  system("cls");
+  cout << "\nInput Data Nasabah" << endl;
+  cout << "Nama\t\t: ";
+  getline(cin, nama);
+  cout << "NIM\t\t: ";
+  getline(cin, NIM);
+  cout << "Alamat\t\t: ";
+  getline(cin, alamat);
+  cout << "No. Telepon\t: ";
+  getline(cin, nomortelepon);
+}
 
 void displayMenu()
 {
+  system("cls");
   cout << "Pilihan Menu ATM" << endl;
   cout << "1. Cek Saldo" << endl;
   cout << "2. Setor Saldo" << endl;
@@ -17,18 +37,26 @@ void displayMenu()
   cout << "5. Keluar";
 }
 
+void next()
+{
+  cout << "Tekan apa saja untuk lanjut..";
+  cin.ignore();
+  cin.get();
+}
+
 int main()
 {
-  Saldo saldo_sekarang;
-  Saldo tambah_saldo;
-  fiturSaldo saldo_setor, saldo_tarik;
+  CekData data;
 
-  system("cls");
-
-  displayMenu();
+  inputdata();
+  datanasabah nasabah(nama, NIM, alamat, nomortelepon);
+  DataTransaksi transaksi;
 
   do
   {
+    system("cls");
+    displayMenu();
+
     loop_menu = 0;
 
     cout << "\nPilih Menu : ";
@@ -37,51 +65,43 @@ int main()
     switch (menu)
     {
     case 1:
-      saldo_sekarang.cekSaldo();
-
+      fiturCekSaldo();
+      next();
       loop_menu = 1;
       break;
 
     case 2:
-      saldo_setor.setorSaldo();
-      saldo_sekarang = saldo_sekarang + saldo_setor;
-      saldo_sekarang.cekSaldo();
-
+      fiturSetorSaldo();
+      next();
       loop_menu = 1;
       break;
 
     case 3:
-      if (!saldo_sekarang.isEmpty())
-      {
-        saldo_tarik.tarikSaldo();
-        if (saldo_sekarang.getSaldo() < saldo_tarik.getSaldo())
-        {
-          cout << "Saldo ga cukup kocak" << endl;
-        }
-        else
-        {
-          saldo_sekarang = saldo_sekarang - saldo_tarik;
-          saldo_sekarang.cekSaldo();
-        }
-      }
-      else
-      {
-        cout << "Saldo kosong, setor duls" << endl;
-      }
-
+      fiturTarikSaldo();
+      next();
       loop_menu = 1;
       break;
 
     case 4:
-      // cekDataDiri();
+      data.setNama(nama);
+      data.setNIM(NIM);
+      data.setAlamat(alamat);
+      data.setNomor(nomortelepon);
+      data.cekData();
+      next();
+      loop_menu = 1;
       break;
 
     case 5:
-      // keluar();
+      nasabah.simpankefile(laporanSaldo());
+      transaksi.laporanTransaksi(laporanSetor(), laporanTarik(), laporanSaldo());
+      keluar();
+      return 0;
       break;
 
     default:
       cout << "Pilih 1 sampai 5 saja" << endl;
+      next();
       loop_menu = 1;
       break;
     }

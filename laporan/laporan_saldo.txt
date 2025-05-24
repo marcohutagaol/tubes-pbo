@@ -1,0 +1,7 @@
+Data Nasabah
+            
+Nama        : Marco Rivero
+NIM         : 0987654321
+Alamat      : 241402035
+No. Telepon : dimana aja
+Saldo       : Rp5000
