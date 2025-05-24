@@ -1,0 +1,5 @@
+data nasabah
+            
+nama: jossye
+alamat: siantar
+nomor telepon: 090909
