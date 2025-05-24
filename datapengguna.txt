@@ -1,2 +1,0 @@
-admin|123|administrator|kantor|08123456789|admin
-san|jossye|joss|siantar|089898|nasabah
