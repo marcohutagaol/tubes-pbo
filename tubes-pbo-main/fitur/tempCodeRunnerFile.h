@@ -1,1 +1,0 @@
-   DataTransaksi::LaporanTransaksi();

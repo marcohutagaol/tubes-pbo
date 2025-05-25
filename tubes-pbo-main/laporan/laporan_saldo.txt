@@ -1,8 +1,0 @@
-Data Nasabah
-            
-Nama        : jossye
-NIM         : 3421
-Alamat      : kkk
-No. Telepon : 087656
-No. Rekening: 4663875071
-Saldo       : Rp0
