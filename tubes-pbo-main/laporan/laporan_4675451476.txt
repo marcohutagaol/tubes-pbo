@@ -1,0 +1,11 @@
+==============================
+     LAPORAN DATA NASABAH
+==============================
+Waktu Cetak : Sun May 25 08:32:34 2025
+Nama        : san jossye
+NIM         : sitanggang
+Alamat      : lomas
+No. Telepon : 08929812
+No. Rekening: 4675451476
+Saldo       : Rp200000
+==============================

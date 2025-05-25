@@ -1,0 +1,11 @@
+==============================
+     LAPORAN DATA NASABAH
+==============================
+Waktu Cetak : Sun May 25 03:09:33 2025
+Nama        : koko
+NIM         : kokok
+Alamat      : kokok
+No. Telepon : 09807
+No. Rekening: 4623371111
+Saldo       : Rp0
+==============================
