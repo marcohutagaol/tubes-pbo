@@ -49,7 +49,6 @@ public:
             file << "==============================" << endl;
             file.close();
             
-            cout << "\nData berhasil disimpan ke file: " << namafile << endl;
         }
         else
         {

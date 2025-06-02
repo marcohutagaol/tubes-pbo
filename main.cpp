@@ -50,8 +50,6 @@ void inputdata()
   cout << "Selamat! Akun BNI Anda telah dibuat" << endl;
   cout << "Nomor Rekening BNI" << norek << endl;
   cout << "==================================" << endl;
-  cout << "Tekan apa saja untuk lanjut ke ATM...";
-  cin.get();
 }
 
 void displayMenu()
@@ -142,6 +140,7 @@ void menuUtama()
         cout << "Tekan apa saja untuk kembali ke menu utama...";
         cin.ignore();
         cin.get();
+        menuUtama();
 
         ulang = 0;
         break;
@@ -180,10 +179,9 @@ void menuUtama()
 
 int main()
 {
-  while (true)
-  {
+
     menuUtama();
-    return 0;
-  }
+  
+  return 0;
 
 }
