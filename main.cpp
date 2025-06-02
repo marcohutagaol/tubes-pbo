@@ -183,7 +183,7 @@ int main()
   while (true)
   {
     menuUtama();
+    return 0;
   }
 
-  return 0;
 }

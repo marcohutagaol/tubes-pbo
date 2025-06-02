@@ -1,7 +1,7 @@
 Data Nasabah
             
-Penyetoran : Rp0
+Penyetoran : Rp120
 Penarikan  : Rp0
-Sisa Saldo : Rp0
-Tanggal    : Sun May 25 20:37:02 2025
+Sisa Saldo : Rp120
+Tanggal    : Mon Jun 02 08:43:23 2025
 
