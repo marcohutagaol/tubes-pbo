@@ -26,7 +26,7 @@ class SisaSaldo : public Keluar
 public:
   void pesan() override
   {
-    cout << "Anda juga bisa cek sisa saldo anda pada laporan_saldo.txt\n" << endl;
+    cout << "Anda juga bisa cek sisa saldo anda pada laporan_norek.txt\n" << endl;
   }
 };
 
